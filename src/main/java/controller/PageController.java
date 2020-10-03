@@ -2,6 +2,7 @@ package controller;
 
 import model.Scenario;
 
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,9 +11,9 @@ import repository.ScenarioRepository;
 @RestController
 public class PageController {
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     public String mainPage() {
-        return "Hello World!";
+        return "start";
     }
 
     @RequestMapping("/hello")
